@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agendamento - Clínica Luxéa</title>
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #fdebed;
+      color: #843c4a;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff0f5;
+      border: 1px solid #f5b3c6;
+    }
+    header nav a, .agendar {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #843c4a;
+      font-weight: 600;
+    }
+    .agendar {
+      background-color: #f7c9d3;
+      border: 1px solid #843c4a;
+      padding: 8px 15px;
+      border-radius: 25px;
+    }
+    main {
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #f5b3c6;
+      font-family: inherit;
+    }
+    button {
+      background-color: #f7c9d3;
+      color: #843c4a;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>CLÍNICA LUXÉA BELEZA & BEM-ESTAR</strong></div>
+    <nav>
+      <a href="index.html">INÍCIO</a>
+      <a href="servicos.html">SERVIÇOS</a>
+      <a href="depoimentos.html">DEPOIMENTOS</a>
+      <a href="contato.html">CONTATO</a>
+    </nav>
+    <a href="agendamento.html" class="agendar">AGENDAR AVALIAÇÃO</a>
+  </header>
+
+  <main>
+    <h2>Agende sua avaliação gratuita</h2>
+    <form onsubmit="confirmarAgendamento(event)">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" required>
+
+      <label for="telefone">Telefone/WhatsApp:</label>
+      <input type="tel" id="telefone" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" required>
+
+      <label for="data">Data desejada:</label>
+      <input type="date" id="data" required>
+
+      <label for="servico">Serviço de interesse:</label>
+      <select id="servico" required>
+        <option value="">Selecione</option>
+        <option value="Limpeza de pele">Limpeza de pele</option>
+        <option value="Botox e preenchimento">Botox e preenchimento</option>
+        <option value="Depilação a laser">Depilação a laser</option>
+        <option value="Massagem relaxante">Massagem relaxante</option>
+        <option value="Drenagem linfática">Drenagem linfática</option>
+      </select>
+
+      <button type="submit">Confirmar Agendamento</button>
+    </form>
+  </main>
+
+  <footer>
+    @Clínica Luxéa - Todos os direitos reservados
+  </footer>
+
+  <script>
+    function confirmarAgendamento(event) {
+      event.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const servico = document.getElementById("servico").value;
+      const data = document.getElementById("data").value;
+      alert(`Obrigada, ${nome}! Seu agendamento para "${servico}" no dia ${data} foi registrado com sucesso.`);
+    }
+  </script>
+</body>
+</html>
